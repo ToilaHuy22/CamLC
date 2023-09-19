@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CamLC.iml" filepath="$PROJECT_DIR$/.idea/CamLC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CAMLC.iml" filepath="$PROJECT_DIR$/.idea/CAMLC.iml" />
     </modules>
   </component>
 </project>
