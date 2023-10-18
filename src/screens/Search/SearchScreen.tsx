@@ -5,7 +5,10 @@ import { SearchBox } from '@/components';
 const SearchScreen = () => {
   return (
     <SafeAreaView>
-      <SearchBox />
+      <SearchBox
+        placeholder={'What are you looking for?'}
+        isSearchScreen={true}
+      />
     </SafeAreaView>
   );
 };

@@ -20,7 +20,10 @@ const Welcome = () => {
           Luxurious Furniture
         </Text>
       </View>
-      <SearchBox />
+      <SearchBox
+        placeholder={'What are you looking for?'}
+        isSearchScreen={false}
+      />
     </View>
   );
 };
