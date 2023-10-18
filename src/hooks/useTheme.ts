@@ -9,6 +9,7 @@ import {
   Layout,
   themes,
   DefaultVariables,
+  Icons,
 } from '../theme';
 import { ThemeState } from '../store/theme';
 import {
@@ -60,6 +61,7 @@ export default function () {
   const fonts = Fonts(themeVariables);
   const gutters = Gutters(themeVariables);
   const images = Images(themeVariables);
+  const icons = Icons(themeVariables);
   const layout = Layout(themeVariables);
   const common = Common({
     ...themeVariables,
@@ -75,11 +77,13 @@ export default function () {
     typeof gutters,
     typeof images,
     typeof layout,
-    typeof common
+    typeof common,
+    typeof icons
   > = {
     Fonts: fonts,
     Gutters: gutters,
     Images: images,
+    Icons: icons,
     Layout: layout,
     Common: common,
     ...themeVariables,
@@ -97,9 +101,9 @@ export default function () {
 /**
  * Generate Theme with theme variables
  */
-const formatTheme = <F, G, I, L, C>(
+const formatTheme = <F, G, I, L, C, IC>(
   variables: ThemeVariables,
-  theme: Partial<Theme<F, G, I, L, C>>,
+  theme: Partial<Theme<F, G, I, L, C, IC>>,
 ) => {
   return Object.entries(theme).reduce((acc, [name, generate]) => {
     return {
@@ -139,11 +143,11 @@ const mergeVariables = (
 /**
  * Provide all the theme exposed with useTheme()
  */
-const buildTheme = <F, G, I, L, C>(
+const buildTheme = <F, G, I, L, C, IC>(
   darkMode: boolean,
-  baseTheme: Theme<F, G, I, L, C>,
-  themeConfig: Partial<Theme<F, G, I, L, C>>,
-  darkThemeConfig: Partial<Theme<F, G, I, L, C>>,
+  baseTheme: Theme<F, G, I, L, C, IC>,
+  themeConfig: Partial<Theme<F, G, I, L, C, IC>>,
+  darkThemeConfig: Partial<Theme<F, G, I, L, C, IC>>,
 ) => {
   return {
     ...mergeTheme(baseTheme, themeConfig, darkThemeConfig),
@@ -158,10 +162,10 @@ const buildTheme = <F, G, I, L, C>(
 /**
  * Merge theme from baseTheme <- currentTheme <- currentDarkTheme
  */
-const mergeTheme = <F, G, I, L, C>(
-  baseTheme: Theme<F, G, I, L, C>,
-  theme: Partial<Theme<F, G, I, L, C>>,
-  darkTheme: Partial<Theme<F, G, I, L, C>>,
+const mergeTheme = <F, G, I, L, C, IC>(
+  baseTheme: Theme<F, G, I, L, C, IC>,
+  theme: Partial<Theme<F, G, I, L, C, IC>>,
+  darkTheme: Partial<Theme<F, G, I, L, C, IC>>,
 ) =>
   Object.entries(baseTheme).reduce(
     (acc, [key, value]) => ({

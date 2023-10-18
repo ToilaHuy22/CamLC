@@ -9,11 +9,12 @@ export type ThemeVariables = {
   MetricsSizes: typeof Variables.MetricsSizes;
 };
 
-export type Theme<F, G, I, L, C> = ThemeVariables & {
+export type Theme<F, G, I, L, C, IC> = ThemeVariables & {
   Fonts: F;
   Gutters: G;
   Images: I;
   Layout: L;
+  Icons: IC;
   Common: C;
   Variables?: Partial<ThemeVariables>;
 };
@@ -53,12 +54,14 @@ type Paddings =
   | 'LPadding'
   | 'VPadding'
   | 'HPadding';
+type Position = 'Bottom' | 'Top' | 'Left' | 'Right';
 
 type MarginKeys = `${keyof ThemeVariables['MetricsSizes']}${Margins}`;
 type PaddingKeys = `${keyof ThemeVariables['MetricsSizes']}${Paddings}`;
+type PositionKeys = `${keyof ThemeVariables['MetricsSizes']}${Position}`;
 
 type Gutters = {
-  [key in MarginKeys | PaddingKeys]: {
+  [key in MarginKeys | PaddingKeys | PositionKeys]: {
     [k in string]: number;
   };
 };
