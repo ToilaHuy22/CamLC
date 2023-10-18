@@ -7,7 +7,13 @@ import {
   View,
 } from 'react-native';
 import { useTheme } from '@/hooks';
-import { Text, Welcome } from '@/components';
+import { Slider, Text, Welcome } from '@/components';
+
+const slides = [
+  'https://amateurphotographer.com/wp-content/uploads/sites/7/2022/09/Sony-FX30-15-P9261053-acr.jpg',
+  'https://amateurphotographer.com/wp-content/uploads/sites/7/2022/09/Sony-FX30-16-P9261055-acr.jpg',
+  'https://amateurphotographer.com/wp-content/uploads/sites/7/2022/09/Sony-FX30-18-P9261061-acr.jpg',
+];
 
 const HomeScreen = () => {
   const { Layout, Fonts, Gutters, Icons, Colors } = useTheme();
@@ -52,6 +58,7 @@ const HomeScreen = () => {
       </View>
       <ScrollView>
         <Welcome />
+        <Slider dataImage={slides} />
       </ScrollView>
     </SafeAreaView>
   );

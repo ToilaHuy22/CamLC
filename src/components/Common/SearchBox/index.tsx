@@ -1,11 +1,16 @@
-import { Image, TouchableOpacity, View } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { Image, TouchableOpacity, View, TextInput } from 'react-native';
 import React from 'react';
 import { useTheme } from '@/hooks';
 import { useNavigation } from '@react-navigation/native';
 
-const SearchBox = () => {
+interface ISearchBox {
+  placeholder: string;
+  isSearchScreen: boolean;
+}
+
+const SearchBox = (props: ISearchBox) => {
   const { Layout, Fonts, Gutters, Icons, Colors } = useTheme();
+  const { placeholder, isSearchScreen } = props;
   const navigation = useNavigation();
 
   return (
@@ -30,9 +35,11 @@ const SearchBox = () => {
       <View style={[Layout.fill, Gutters.smallRMargin, Layout.smallRounded]}>
         <TextInput
           style={[Layout.fullSize, Gutters.smallHPadding]}
-          value={''}
-          onPressIn={() => navigation.navigate('Search')}
-          placeholder={'What are you looking for?'}
+          value=''
+          onPressIn={() =>
+            isSearchScreen ? {} : navigation.navigate('Search')
+          }
+          placeholder={placeholder}
         />
       </View>
       <View>
