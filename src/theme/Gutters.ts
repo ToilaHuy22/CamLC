@@ -62,6 +62,19 @@ export default function ({ MetricsSizes }: ThemeVariables): Gutters {
         [`${key}HPadding`]: {
           paddingHorizontal: value,
         },
+        /*Position*/
+        [`${key}Bottom`]: {
+          bottom: value,
+        },
+        [`${key}Top`]: {
+          top: value,
+        },
+        [`${key}Left`]: {
+          left: value,
+        },
+        [`${key}Right`]: {
+          right: value,
+        },
       }),
       {},
     ) as Gutters,

@@ -8,22 +8,42 @@ export default function ({ FontSize, Colors }: ThemeVariables) {
   return StyleSheet.create({
     textTiny: {
       fontSize: FontSize.tiny,
-      color: Colors.textGray400,
+      color: Colors.normalColor,
+    },
+    textXsSmall: {
+      fontSize: FontSize.tiny,
+      color: Colors.normalColor,
     },
     textSmall: {
       fontSize: FontSize.small,
-      color: Colors.textGray400,
+      color: Colors.normalColor,
     },
     textRegular: {
-      fontSize: FontSize.regular,
-      color: Colors.textGray400,
+      fontSize: FontSize.base,
+      color: Colors.normalColor,
     },
     textLarge: {
-      fontSize: FontSize.large,
-      color: Colors.textGray400,
+      fontSize: FontSize.md,
+      color: Colors.normalColor,
+    },
+    textNormal: {
+      fontSize: FontSize.tiny,
+      color: Colors.normalColor,
+      fontWeight: 'normal',
+    },
+    textTitleScreen: {
+      fontSize: FontSize['2xl'],
+      color: Colors.normalColor,
+      fontWeight: 'bold',
+    },
+    textXBold: {
+      fontWeight: '700',
     },
     textBold: {
-      fontWeight: 'bold',
+      fontWeight: '900',
+    },
+    textMedium: {
+      fontWeight: '500',
     },
     textUppercase: {
       textTransform: 'uppercase',
@@ -34,12 +54,12 @@ export default function ({ FontSize, Colors }: ThemeVariables) {
       color: Colors.textGray800,
     },
     titleRegular: {
-      fontSize: FontSize.regular * 2,
+      fontSize: FontSize.base * 2,
       fontWeight: 'bold',
       color: Colors.textGray800,
     },
     titleLarge: {
-      fontSize: FontSize.large * 2,
+      fontSize: FontSize.md * 2,
       fontWeight: 'bold',
       color: Colors.textGray800,
     },

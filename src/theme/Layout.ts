@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { ThemeVariables } from '../../@types/theme';
+import { Rounded } from '@/theme/Variables';
 
 export default function ({}: ThemeVariables) {
   return StyleSheet.create({
@@ -26,6 +27,10 @@ export default function ({}: ThemeVariables) {
     /* Row Layouts */
     row: {
       flexDirection: 'row',
+    },
+    rowCenterBetween: {
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
     rowReverse: {
       flexDirection: 'row-reverse',
@@ -100,6 +105,33 @@ export default function ({}: ThemeVariables) {
     fullHeight: {
       height: '100%',
     },
+
+    /*Icon Image*/
+    sizeImage: {
+      width: 48,
+      height: 48,
+    },
+    sizeIcon: {
+      width: 24,
+      height: 24,
+    },
+    sizeQuantity: {
+      width: 14,
+      height: 14,
+    },
+    /*Box size*/
+    heightMediumSize: {
+      height: 50,
+    },
+    widthMediumSize: {
+      width: 50,
+    },
+    heightLargeSize: {
+      height: 100,
+    },
+    widthLargeSize: {
+      width: 100,
+    },
     /* Operation Layout */
     mirror: {
       transform: [{ scaleX: -1 }],
@@ -128,6 +160,63 @@ export default function ({}: ThemeVariables) {
     },
     right0: {
       right: 0,
+    },
+
+    //rouder
+    borderTop1: {
+      borderTopWidth: 1,
+    },
+    borderTop2: {
+      borderTopWidth: 2,
+    },
+    borderBot2: {
+      borderBottomWidth: 2,
+    },
+    tinyRounded: {
+      borderRadius: Rounded.tiny,
+    },
+    smallRounded: {
+      borderRadius: Rounded.small,
+    },
+    baseRounded: {
+      borderRadius: Rounded.base,
+    },
+    mdRounded: {
+      borderRadius: Rounded.md,
+    },
+    xlRounded: {
+      borderRadius: Rounded.xl,
+    },
+    '2xlRounded': {
+      borderRadius: Rounded['2xl'],
+    },
+    largeRounded: {
+      borderRadius: Rounded.large,
+    },
+    fullRounded: {
+      borderRadius: Rounded.full,
+    },
+
+    //shadow
+    smallShadow: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 2,
+    },
+    mediumShadow: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 5.84,
+      elevation: 5,
     },
   });
 }

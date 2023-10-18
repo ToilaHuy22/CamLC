@@ -10,6 +10,8 @@ import { useTheme } from '../hooks';
 import MainNavigator from './Main';
 import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
+import BottomTabNavigator from '@/navigators/BottomTabNavigator';
+import { CartScreen } from '@/screens';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -27,8 +29,13 @@ const ApplicationNavigator = () => {
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Startup" component={Startup} />
-          <Stack.Screen name="Main" component={MainNavigator} />
+          <Stack.Screen name='Startup' component={Startup} />
+          <Stack.Screen name='Main' component={BottomTabNavigator} />
+          <Stack.Screen
+            name='Cart'
+            component={CartScreen}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
